@@ -8,7 +8,10 @@
 enfslist
 =========
 Module that add list functionality to node fs module
+
 **enfs** stands for [E]asy [N]ode [fs]
+
+This module is intended to work as a sub-module of [enfs](https://www.npmjs.com/package/enfs)
 
 Description
 -----------
@@ -24,7 +27,7 @@ Usage
 `enfslist`
 
 ```js
-    var enfslist = require("esnofslist");
+    var enfslist = require("enfslist");
 ```
 
 Errors
@@ -47,7 +50,7 @@ Additional Methods
 Each item will be an object containing: {path: pathToItem, stat: itemStat}
 
 [options]:
-  * fs (Object): an alternative fs module to use (default will be [esnofspatch](https://www.npmjs.com/package/enfspatch))
+  * fs (Object): an alternative fs module to use (default will be [enfspatch](https://www.npmjs.com/package/enfspatch))
   * dereference (Boolean): if true will dereference symlinks listing the items to where it points (default: false)
 
 
@@ -67,7 +70,7 @@ Each item will be an object containing: {path: pathToItem, stat: itemStat}
 Each item will be an object containing: {path: pathToItem, stat: itemStat}
 
 [options]:
-  * fs (Object): an alternative fs module to use (default will be [esnofspatch](https://www.npmjs.com/package/enfspatch))
+  * fs (Object): an alternative fs module to use (default will be [enfspatch](https://www.npmjs.com/package/enfspatch))
   * dereference (Boolean): if true will dereference symlinks listing the items to where it points (default: false)
 
 ```js
