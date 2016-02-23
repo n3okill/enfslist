@@ -1,6 +1,6 @@
 {
   "name": "enfslist",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "list items in the file system for fs module of node",
   "license": "CC-BY-4.0",
   "author": {
