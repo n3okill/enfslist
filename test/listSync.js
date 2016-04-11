@@ -1,12 +1,17 @@
-/*global describe, __dirname*/
 /**
- * Created by JParreir on 28-12-2015.
+ * @project enfslist
+ * @filename listSync.js
+ * @description async methods for listing items in directories
+ * @author Joao Parreira <joaofrparreira@gmail.com>
+ * @copyright Copyright(c) 2016 Joao Parreira <joaofrparreira@gmail.com>
+ * @licence Creative Commons Attribution 4.0 International License
+ * @createdAt Created at 18-02-2016.
+ * @version 0.0.1
  */
-
 "use strict";
 
-var nodePath = require("path"),
-    list = require("../");
+const nodePath = require("path");
+const list = require("../");
 
 describe("enfslistSync", function() {
     var tmpPath = nodePath.join(__dirname, "..", "lib");

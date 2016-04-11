@@ -52,7 +52,9 @@ Each item will be an object containing: {path: pathToItem, stat: itemStat}
 [options]:
   * fs (Object): an alternative fs module to use (default will be [enfspatch](https://www.npmjs.com/package/enfspatch))
   * dereference (Boolean): if true will dereference symlinks listing the items to where it points (default: false)
-
+  * back (Number): What you want to get back (0- an array of objects with path and stats, 1- only the paths, 2- only the stats);
+  * stats (Array): What information you want in stats. Ex: ```js ["isFile", "atime", "size"] ```
+  * ignoreAccessError (Boolean): If true will ignore all files and folder's without access permission (default false)
 
 ```js
     enfslist.list("/home", function(err, listOfItems){
@@ -72,6 +74,9 @@ Each item will be an object containing: {path: pathToItem, stat: itemStat}
 [options]:
   * fs (Object): an alternative fs module to use (default will be [enfspatch](https://www.npmjs.com/package/enfspatch))
   * dereference (Boolean): if true will dereference symlinks listing the items to where it points (default: false)
+  * back (Number): What you want to get back (0- an array of objects with path and stats, 1- only the paths, 2- only the stats);
+  * stats (Array): What information you want in stats. Ex: ```js ["isFile", "atime", "size"] ```
+  * ignoreAccessError (Boolean): If true will ignore all files and folder's without access permission (default false)
 
 ```js
     var listOfItems = enfslist.listSync("/home");
