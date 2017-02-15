@@ -14,32 +14,17 @@
 
 const nodePath = require("path");
 const nodeOs = require("os");
-const rimraf = require("rimraf");
-const cwd = process.cwd();
-const fs = require("fs");
 const enfsList = require("../");
+const util = require("./util");
 
 describe("enfslist async", function () {
     const tmpPath = nodePath.join(nodeOs.tmpdir(), "enfslist");
     const files = ["file1", "file2", "file3", "file4"];
     before(function (done) {
-        fs.mkdir(tmpPath, (err) => {
-            (err === null).should.be.equal(true);
-            process.chdir(tmpPath);
-            let filesLength = files.length;
-            files.forEach((path) => {
-                fs.writeFile(path, "data", "utf8", (errWrite) => {
-                    (errWrite === null).should.be.equal(true);
-                    if (--filesLength === 0) {
-                        done();
-                    }
-                });
-            });
-        });
+        util.before(tmpPath, files, done);
     });
     after(function (done) {
-        process.chdir(cwd);
-        rimraf(tmpPath, done);
+        util.after(tmpPath, done);
     });
     it("should list files", function (done) {
         //it will return also the base path used to list files
